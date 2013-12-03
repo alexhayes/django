@@ -89,6 +89,8 @@ class ValidationError(Exception):
             self.params = params
             self.message = message
             self.error_list = [self]
+        
+        super(ValidationError, self).__init__(None)
 
     @property
     def message_dict(self):
