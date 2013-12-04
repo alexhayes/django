@@ -8,5 +8,5 @@ class PickableValidationErrorTestCase(TestCase):
         expected = ValidationError(['a', 'b'])
         actual = pickle.loads(pickle.dumps(expected))
         
-        self.assertEqual(actual.error_list[0].message, expected.error_list[0].message)
-        self.assertEqual(actual.error_list[1].message, expected.error_list[1].message)
+        self.assertEqual(actual.error_list[0], expected.error_list[0])
+        self.assertEqual(actual.error_list[1], expected.error_list[1])
